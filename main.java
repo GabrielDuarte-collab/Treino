@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class main {
  public static void main(String[] args) {
@@ -8,9 +8,14 @@ public class main {
     Livro Livro3 = new Livro("Capitães da Areia"," Jorge Amado", 1937);
     Livro Livro4 = new Livro("Vidas Secas","Graciliano Ramos", 1938);
 
-    Livro1.exibir();
-    Livro2.exibir();
-    Livro3.exibir();
-    Livro4.exibir();
- }
+    biblioteca.adicionar(Livro1);
+    biblioteca.adicionar(Livro2);
+    biblioteca.adicionar(Livro3);
+    biblioteca.Adicionar(Livro4);
+
+    biblioteca.Listar();
+
+    biblioteca.buscar(Vidas Secas)
+
+   }
 }
