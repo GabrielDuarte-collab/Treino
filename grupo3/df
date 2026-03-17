@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+public class df {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int opcao;
+
+        do {
+            telas.menuPrincipal();
+            opcao = Integer.parseInt(sc.nextLine().trim());
+
+            switch (opcao) {
+
+                case 1:
+                    telas.mensagem("Criar conta (em breve)");
+                    break;
+
+                case 2:
+                    telas.mensagem("Acessando conta...");
+
+                    int opcaoConta;
+
+                    do {
+                        telas.menuConta();
+                        opcaoConta = Integer.parseInt(sc.nextLine().trim());
+
+                        switch (opcaoConta) {
+                            case 1:
+                                telas.mensagem("Depósito (em breve)");
+                                break;
+                            case 2:
+                                telas.mensagem("Saque (em breve)");
+                                break;
+                            case 3:
+                                telas.mensagem("Saldo (em breve)");
+                                break;
+                            case 4:
+                                telas.mensagem("Voltando...");
+                                break;
+                            default:
+                                telas.opcaoInvalida();
+                        }
+
+                    } while (opcaoConta != 4);
+
+                    break;
+
+                case 3:
+                    telas.mensagem("Encerrando o sistema. Até logo!");
+                    break;
+
+                default:
+                    telas.opcaoInvalida();
+            }
+
+        } while (opcao != 3);
+
+        sc.close();
+    }
+}
+public class telas {
+
+    public static void menuPrincipal() {
+        System.out.println("\n=== BANCO DIGITAL ===");
+        System.out.println("1 - Criar conta");
+        System.out.println("2 - Acessar conta");
+        System.out.println("3 - Sair");
+        System.out.print("Escolha uma opção: ");
+    }
+
+    public static void menuConta() {
+        System.out.println("\n=== MENU DA CONTA ===");
+        System.out.println("1 - Depositar");
+        System.out.println("2 - Sacar");
+        System.out.println("3 - Ver saldo");
+        System.out.println("4 - Voltar");
+        System.out.print("Escolha uma opção: ");
+    }
+
+    public static void mensagem(String texto) {
+        System.out.println(texto);
+    }
+
+    public static void opcaoInvalida() {
+        System.out.println("Opção inválida! Tente novamente.");
+    }
+}
